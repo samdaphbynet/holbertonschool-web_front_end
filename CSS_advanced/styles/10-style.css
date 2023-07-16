@@ -17,7 +17,7 @@
     --line-height-small: 1.2;
     --line-height-base: 1.5;
     --line-height-big: 1.8;
-    --section-header-center: center;
+    --section-header-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -56,5 +56,5 @@ a {
 }
 
 .section-header {
-    text-align: var(--section-header-center);
+    text-align: var(--section-header-align);
 }
