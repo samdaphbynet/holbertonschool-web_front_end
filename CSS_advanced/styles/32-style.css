@@ -171,6 +171,17 @@ a:active {
     width: 100%;
   }
 
+  .nav .nav-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-white);
+    width: 0;
+    height: 0.2rem;
+    transition: var(--transition-duration) var(--transition-cubic-bezier);
+  }
+
 .visually-hidden {
     display: none;
 }
