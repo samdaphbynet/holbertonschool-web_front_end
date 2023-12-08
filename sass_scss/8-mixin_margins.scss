@@ -13,8 +13,8 @@
     margin-right: 15px;
 }
 body {
-    @include reset_margin;
+    @include reset_body;
 }
 div {
-    @include reset_margin_dev;
+    @include reset_dev;
 }
