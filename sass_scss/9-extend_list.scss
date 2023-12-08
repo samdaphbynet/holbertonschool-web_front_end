@@ -4,12 +4,12 @@
 // Text color #00FF00 to all tags of class .success and extend style of the class .info
 // Text color #FF0000 to all tags of class .warning and extend style of the class .info
 
-%info {
+.info {
     font-size: 12px;
 }
 
 .info, .success, .warning {
-    @extend %info;
+    @extend .info;
 }
 .success {
     color: #00FF00;
