@@ -720,17 +720,16 @@ html {
   /* Post
     ============================= */
 
-  .main-article .post {
+ .post {
     display: flex;
   }
 
-  .main-article .post-content {
+ .post-content {
     width: 100%;
   }
 
-  .main-article .post-meta {
+ .post-meta {
     order: -1;
     min-width: 20%;
   }
 
-  
