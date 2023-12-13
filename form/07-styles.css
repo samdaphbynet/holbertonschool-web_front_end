@@ -843,7 +843,7 @@ input:not(:placeholder-shown) ~ .form-field-icon::after {
     outline: none;
     position: absolute;
     width: 0;
-    height: 0;
+    right: 0;
     background: none;
     cursor: pointer;
     z-index: 3;
