@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Task 0</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>test</h1>
+
+    <script type="application/javascript">
+        // Function to create a family tree table and append it to the body
+        function createFamilyTree() {
+            // Create and append the table element
+            $("body").append($("<table>"));
+            
+            // Create and append the table head
+            $("table").append($("<thead>")).children("thead")
+                        .append($("<tr>")).children("tr")
+                        .append($("<th>").text("FirstName"))
+                        .append($("<th>").text("LastName"));
+            
+            // Create and append the table body
+            $("table").append($("<tbody>")).children("tbody")
+                        .append($("<tr>").append($("<td>").text("Guillaume")).append($("<td>").text("Salva")))
+                        .append($("<tr>").append($("<td>").text("Paulette")).append($("<td>").text("Salva")))
+                        .append($("<tr>").append($("<td>").text("Antoine")).append($("<td>").text("Salva")))
+
+        }
+
+        function replaceFamilyTree() {
+            $("table tbody").html("<tr><td>Gerard</td><td>Bonissa</td></tr>")
+        }
+        
+        // Call the function
+        createFamilyTree();
+        replaceFamilyTree();
+
+    </script>
+</body>
+
+</html>
