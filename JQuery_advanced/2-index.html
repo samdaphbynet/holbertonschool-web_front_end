@@ -7,14 +7,10 @@
     <title>Task 0</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <script
-        src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous"></script>
-        <script
-        src="https://code.jquery.com/jquery-3.7.1.slim.js"
-        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -22,32 +18,31 @@
 
     <script type="application/javascript">
         function createFamilyTree() {
-            const table = $("<table>");
-            const headerRow = $("<tr>");
-            headerRow.append($("<th>").text("FirstName"));
-            headerRow.append($("<th>").text("LastName"));
-            
-            table.append(headerRow);
+            const tableHtml = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Guillaume</td>
+                            <td>Salva</td>
+                        </tr>
+                        <tr>
+                            <td>Paulette</td>
+                            <td>Salva</td>
+                        </tr>
+                        <tr>
+                            <td>Antoine</td>
+                            <td>Salva</td>
+                        </tr>
+                    </tbody>
+                </table>`;
 
-            let row1 = $("<tr>");
-            row1.append($("<td>").text("Guillaume"));
-            row1.append($("<td>").text("Salva"));
-            
-            table.append(row1);
-
-            let row2 = $("<tr>");
-            row2.append($("<td>").text("Paulette"));
-            row2.append($("<td>").text("Salva"));
-            
-            table.append(row2);
-
-            let row3 = $("<tr>");
-            row3.append($("<td>").text("Antoine"));
-            row3.append($("<td>").text("Salva"));
-            
-            table.append(row3);
-
-            $("body").append(table);
+                $("body").append(tableHtml);
         }
 
         createFamilyTree();
