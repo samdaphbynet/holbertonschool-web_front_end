@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Task 0</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    
+    <style>
+        td.remove {
+            background-color: orange;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>jQuery Advanced</h1>
+
+    <script type="application/javascript">
+       function createFamilyTree() {
+            $("body").append($("<table>"));
+            
+            $("table").append($("<thead>").append($("<tr>")
+                        .append($("<th>").text("FirstName"))
+                        .append($("<th>").text("LastName"))
+            ));    
+            $("table").append($("<tbody>"));
+       };
+
+        function addNewMember(firstName, lastName, position) {
+
+            if (position == "before") {
+                $("table tbody").prepend($("<tr>")
+                .append($("<td>").text(firstName))
+                .append($("<td>").text(lastName))
+                .append($('<td class="remove">').text("(x)").click(function() {
+                    $(this).parent().remove();
+                    }
+                )));
+            } else {
+                $("table tbody").append($("<tr>")
+                .append($("<td>").text(firstName))
+                .append($("<td>").text(lastName))
+                .append($('<td class="remove">').text("(x)").click(function() {
+                    $(this).parent().remove();
+                }
+            )));
+            } 
+        };
+
+        function createForm() {
+            $("table").before("<input type='text'>").before("<input type='text'>");
+            $("table").before("<select><option value='before'>before</option><option value='after'>after</option></select>");
+            $("table").before("<input type='submit' value='Submit' onclick='addMember()'>");
+        }
+
+        function addMember() {
+            const firstName = $('input[type="text"]:first').val();
+            const lastName = $('input[type="text"]:nth-of-type(2)').val();
+            const position = $("select").val();
+
+            addNewMember(firstName, lastName, position);
+
+            console.log(firstName, lastName, position);
+        }
+        
+       createFamilyTree();
+
+       addNewMember('Guillaume', 'Salva');
+       addNewMember('Arielle', 'Snizt');
+       addNewMember('Fanette', 'Snizt');
+       addNewMember('Gerard', 'Snizt');
+       addNewMember('Victor', 'Salva');
+
+       createForm();
+    </script>
+</body>
+
+</html>
