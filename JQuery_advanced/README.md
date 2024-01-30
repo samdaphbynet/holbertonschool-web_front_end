@@ -8,3 +8,10 @@
 - Learn how to add a click handler on an element
 - Learn how to send GET, POST, DELETE or any type of AJAX query with jQuery
 - Learn how to create a pagination
+
+### 10. Another Get API
+#### For 10-index.html
+```
+Install json-server within your projects using npm:
+Run the server using node_modules/.bin/json-server --watch db.json
+```
