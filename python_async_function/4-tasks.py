@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-from typing import List
-from functools import partial
 import asyncio
+from typing import List
 task_wait_random = __import__('3-tasks').task_wait_random
 
 
@@ -15,8 +14,7 @@ task_wait_random = __import__('3-tasks').task_wait_random
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
     delays = []
     for _ in range(n):
-        coro = partial(task_wait_random, max_delay)
-        task = asyncio.create_task(coro())
-        await task
-        delays.append(task.result())
-    return sorted(delays)
+        delays.append(task_wait_random(max_delay))
+    
+    response = await asyncio.gather(*delays)
+    return sorted(response)
