@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import time
+from time import time
 import asyncio
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
@@ -9,8 +9,8 @@ wait_n = __import__('1-concurrent_coroutines').wait_n
 # and returns total_time / n. Your function should return a float.
 
 def measure_time(n: int, max_delay: int) -> float:
-    first = time.perf_counter()
+    first = time()
     asyncio.run(wait_n(n, max_delay))
-    secound = time.perf_counter()
+    secound = time()
     res = secound - first
     return res / n
