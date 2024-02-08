@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Cookies & local storage</title>
+</head>
+
+<body>
+    <div>
+        <h1>Login to the website</h1>
+        <input type="text" id="firstname" placeholder="Firstname">
+        <input type="text" id="email" placeholder="Email">
+        <button onclick="setCookies()">Log me in</button>
+    </div>
+    <div>
+        <h1>Cookies</h1>
+        <button onclick="showCookies()">Show the cookies</button>
+    </div>
+
+    <script>
+        function setCookies() {
+            firstName = document.getElementById("firstname").value;
+            email = document.getElementById("email").value;
+
+            const expirDate = new Date();
+            expirDate.setDate(expirDate.getDate() + 10);
+
+            const expir = expirDate.toUTCString();
+            console.log("===================",expir)
+
+            document.cookie = `firstname=${firstname}; expires=${expir}; path=/`;
+            document.cookie = `email=${email}; expires=${expir}; path=/`;
+
+        }
+
+        function showCookies() {
+            const para = document.createElement('p');
+            const cookiesValue = document.cookie;
+
+            para.innerHTML = `Cookies: ${cookiesValue}`;
+
+            document.body.appendChild(para)
+        }
+    </script>
+</body>
+
+</html>
